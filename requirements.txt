@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+ariadne
+python-dotenv
+pymongo
+pyjwt

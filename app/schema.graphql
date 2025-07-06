@@ -1,0 +1,14 @@
+type Query {
+  _empty: String
+}
+
+type Mutation {
+  createProduct(input: ProductInput!): String!
+}
+
+input ProductInput {
+  name: String!
+  description: String!
+  price: Float!
+  brand: String!
+}

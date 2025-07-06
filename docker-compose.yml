@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  create-product-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: create-product-service
+    ports:
+      - "4007:4007"
+    env_file:
+      - .env
+    restart: always
