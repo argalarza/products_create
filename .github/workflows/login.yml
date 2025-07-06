@@ -21,8 +21,8 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - run: |
-          docker build -t argalarza/create-product-service:latest .
-          docker push argalarza/create-product-service:latest
+          docker build -t agente47/create-product-service:latest .
+          docker push agente47/create-product-service:latest
 
       - uses: appleboy/ssh-action@v1.0.3
         with:
@@ -47,7 +47,7 @@ jobs:
             EOF
 
             echo "📦 Desplegando contenedor..."
-            sudo docker pull argalarza/create-product-service:latest
+            sudo docker pull agente47/create-product-service:latest
             sudo docker network inspect my_global_network >/dev/null 2>&1 || \
               sudo docker network create my_global_network
             sudo docker stop create-product-service || true
@@ -56,4 +56,4 @@ jobs:
               --env-file /home/ec2-user/.env.create-product-service \
               -p 4010:4010 \
               --network my_global_network \
-              argalarza/create-product-service:latest
+              agente47/create-product-service:latest
