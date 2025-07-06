@@ -54,6 +54,6 @@ jobs:
             sudo docker rm create-product-service || true
             sudo docker run -d --name create-product-service \
               --env-file /home/ec2-user/.env.create-product-service \
-              -p 4010:4010 \
+              -p 4007:4007 \
               --network my_global_network \
               agente47/create-product-service:latest
